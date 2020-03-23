@@ -1,0 +1,20 @@
+﻿@page
+@model StrongBartending.Pages.AdminPageModel
+@{
+    ViewData["Title"] = "AdminPage";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Admin Page</h1>
+<table class="table">
+    <tr>
+        <td>
+            <a class="nav-link text-dark" href="/Identity/Admin/UserRoles">Manage UserRoles</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a class="nav-link text-dark" href="/Identity/Admin/Roles">Manage Roles</a>
+        </td>
+    </tr>
+</table>

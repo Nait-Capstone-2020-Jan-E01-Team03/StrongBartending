@@ -1,0 +1,75 @@
+﻿@page
+@model StrongBartending.Pages.Contact.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Contacts</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Contacts.Active" class="control-label"></label>
+                <input asp-for="Contacts.Active" class="form-control" />
+                <span asp-validation-for="Contacts.Active" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacts.FullName" class="control-label"></label>
+                <input asp-for="Contacts.FullName" class="form-control" />
+                <span asp-validation-for="Contacts.FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacts.Phone" class="control-label"></label>
+                <input asp-for="Contacts.Phone" class="form-control" />
+                <span asp-validation-for="Contacts.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacts.Email" class="control-label"></label>
+                <input asp-for="Contacts.Email" class="form-control" />
+                <span asp-validation-for="Contacts.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Contacts.Notes" class="control-label"></label>
+                <input asp-for="Contacts.Notes" class="form-control" />
+                <span asp-validation-for="Contacts.Notes" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Contacts.Created" class="control-label"></label>
+                <input asp-for="Contacts.Created" class="form-control" />
+                <span asp-validation-for="Contacts.Created" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Contacts.CreatedBy" class="control-label"></label>
+                <input asp-for="Contacts.CreatedBy" class="form-control" value="@User.Identity.Name" readonly/>
+                <span asp-validation-for="Contacts.CreatedBy" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Contacts.Modified" class="control-label"></label>
+                <input asp-for="Contacts.Modified" class="form-control" />
+                <span asp-validation-for="Contacts.Modified" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Contacts.ModifiedBy" class="control-label"></label>
+                <input asp-for="Contacts.ModifiedBy" class="form-control"  value="@User.Identity.Name" readonly/>
+                <span asp-validation-for="Contacts.ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,116 @@
+﻿@page
+@model StrongBartending.Pages.Lead.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Leads</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Leads.LeadKey" />
+            <div class="form-group">
+                <label asp-for="Leads.LegacyId" class="control-label"></label>
+                <input asp-for="Leads.LegacyId" class="form-control" />
+                <span asp-validation-for="Leads.LegacyId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.LeadStat" class="control-label"></label>
+                <input asp-for="Leads.LeadStat" class="form-control" />
+                <span asp-validation-for="Leads.LeadStat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.EventDate" class="control-label"></label>
+                <input asp-for="Leads.EventDate" class="form-control" />
+                <span asp-validation-for="Leads.EventDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.StartTime" class="control-label"></label>
+                <input asp-for="Leads.StartTime" class="form-control" />
+                <span asp-validation-for="Leads.StartTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.EventType" class="control-label"></label>
+                <input asp-for="Leads.EventType" class="form-control" />
+                <span asp-validation-for="Leads.EventType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.BarPayKey" class="control-label"></label>
+                <input asp-for="Leads.BarPayKey" class="form-control" />
+                <span asp-validation-for="Leads.BarPayKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.BarTypeKey" class="control-label"></label>
+                <input asp-for="Leads.BarTypeKey" class="form-control" />
+                <span asp-validation-for="Leads.BarTypeKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.Location" class="control-label"></label>
+                <input asp-for="Leads.Location" class="form-control" />
+                <span asp-validation-for="Leads.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.Guests" class="control-label"></label>
+                <input asp-for="Leads.Guests" class="form-control" />
+                <span asp-validation-for="Leads.Guests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.Theme" class="control-label"></label>
+                <input asp-for="Leads.Theme" class="form-control" />
+                <span asp-validation-for="Leads.Theme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.ContactKey" class="control-label"></label>
+                <select asp-for="Leads.ContactKey" class="form-control" asp-items="ViewBag.ContactKey" readonly></select>
+                <span asp-validation-for="Leads.ContactKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.LinkKey" class="control-label"></label>
+                <input asp-for="Leads.LinkKey" class="form-control" />
+                <span asp-validation-for="Leads.LinkKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.Notes" class="control-label"></label>
+                <input asp-for="Leads.Notes" class="form-control" />
+                <span asp-validation-for="Leads.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.Created" class="control-label"></label>
+                <input asp-for="Leads.Created" class="form-control" readonly/>
+                <span asp-validation-for="Leads.Created" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.CreatedBy" class="control-label"></label>
+                <input asp-for="Leads.CreatedBy" class="form-control" readonly/>
+                <span asp-validation-for="Leads.CreatedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.Modified" class="control-label"></label>
+                <input asp-for="Leads.Modified" class="form-control" readonly/>
+                <span asp-validation-for="Leads.Modified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.ModifiedBy" class="control-label"></label>
+                <input asp-for="Leads.ModifiedBy" class="form-control" value="@User.Identity.Name" readonly/>
+                <span asp-validation-for="Leads.ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
