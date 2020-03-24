@@ -8504,11 +8504,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jiawei\\Desktop\\3rd year\\3990\\StrongBartending\\StrongBartending.csproj",
+      "projectUniqueName": "C:\\Users\\Jiawei\\Documents\\GitHub\\StrongBartending\\StrongBartending.csproj",
       "projectName": "StrongBartending",
-      "projectPath": "C:\\Users\\Jiawei\\Desktop\\3rd year\\3990\\StrongBartending\\StrongBartending.csproj",
+      "projectPath": "C:\\Users\\Jiawei\\Documents\\GitHub\\StrongBartending\\StrongBartending.csproj",
       "packagesPath": "C:\\Users\\Jiawei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jiawei\\Desktop\\3rd year\\3990\\StrongBartending\\obj\\",
+      "outputPath": "C:\\Users\\Jiawei\\Documents\\GitHub\\StrongBartending\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
