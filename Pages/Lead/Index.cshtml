@@ -27,7 +27,7 @@
                 @Html.DisplayNameFor(model => model.Leads[0].StartTime)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Leads[0].EventType)
+                @Html.DisplayNameFor(model => model.Leads[0].EventTypeKey)
             </th>
             <th></th>
         </tr>
@@ -48,7 +48,7 @@
                 @Html.DisplayFor(modelItem => item.StartTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EventType)
+                @Html.DisplayFor(modelItem => item.EventTypeKey)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.LeadKey">Edit</a> |

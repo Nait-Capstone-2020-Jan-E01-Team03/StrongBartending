@@ -10,7 +10,7 @@ namespace StrongBartending
         public int LeadStat { get; set; }
         public DateTime EventDate { get; set; }
         public TimeSpan StartTime { get; set; }
-        public int EventType { get; set; }
+        public int EventTypeKey { get; set; }
         public int BarPayKey { get; set; }
         public int BarTypeKey { get; set; }
         public string Location { get; set; }

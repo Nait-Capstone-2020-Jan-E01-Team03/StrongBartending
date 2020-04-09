@@ -1,0 +1,21 @@
+Quality Control - 04-09-2020
+
+ALL FORMS
+1. Force login or hide these pages until user has authenticated
+- Can't select User.Identity.Name if nobody is logged in, leaving the CreatedBy and ModifiedBy fields blank
+2. Update field Labels to user-friendly names
+3. Convert "Type" or "Key" fields to drop down lists like we have done with ContactKey
+4. Make the notes box a multi-line textbox
+5. Exception Handling - Min Max values, Invalid values
+6. Prevent bad data from being entered. Field Lengths assigned to textboxes that match what we have in the database.
+
+
+LEADS
+1. LegacyID is not required. Remove it from the form. This is only used in our data migration to assign a unique value to legacy data.
+2. EventDate is a Date parameter, not DateTime. We want to set the Time with Start Time.
+3. Would should not be able to set guests to -1
+
+
+
+
+
