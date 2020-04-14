@@ -14,8 +14,8 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input asp-for="AspNetUserRoles.UserId" />
-            <input asp-for="AspNetUserRoles.RoleId" />
+            <input type="hidden" asp-for="AspNetUserRoles.UserId" />
+            <input type="hidden" asp-for="AspNetUserRoles.RoleId" />
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

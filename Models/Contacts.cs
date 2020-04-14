@@ -7,6 +7,7 @@ namespace StrongBartending
     {
         public Contacts()
         {
+            Events = new HashSet<Events>();
             Leads = new HashSet<Leads>();
         }
 
@@ -21,6 +22,7 @@ namespace StrongBartending
         public DateTime Modified { get; set; }
         public string ModifiedBy { get; set; }
 
+        public virtual ICollection<Events> Events { get; set; }
         public virtual ICollection<Leads> Leads { get; set; }
     }
 }

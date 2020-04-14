@@ -15,21 +15,23 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Leads[0].LegacyId)
+                Legacy ID
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Leads[0].LeadStat)
+                Event Date
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Leads[0].EventDate)
+                Start Time
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Leads[0].StartTime)
+                Location
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Leads[0].EventTypeKey)
+                Status
             </th>
-            <th></th>
+            <th>
+                Event Type
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -39,16 +41,19 @@
                 @Html.DisplayFor(modelItem => item.LegacyId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LeadStat)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.EventDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StartTime)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EventTypeKey)
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LeadStatNavigation.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventTypeKeyNavigation.Description)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.LeadKey">Edit</a> |

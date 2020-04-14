@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using StrongBartending;
 using StrongBartending.Data;
-using System.Web;
+
 namespace StrongBartending.Pages.Lead
 {
     public class CreateModel : PageModel
@@ -21,7 +21,12 @@ namespace StrongBartending.Pages.Lead
 
         public IActionResult OnGet()
         {
+        ViewData["BarPayKey"] = new SelectList(_context.BarPays, "BarPayKey", "Description");
+        ViewData["BarTypeKey"] = new SelectList(_context.BarTypes, "BarTypeKey", "Description");
         ViewData["ContactKey"] = new SelectList(_context.Contacts, "ContactKey", "FullName");
+        ViewData["EventTypeKey"] = new SelectList(_context.EventTypes, "EventTypeKey", "Description");
+        ViewData["LeadStat"] = new SelectList(_context.LeadStatus, "LeadStat", "Description");
+        ViewData["LinkKey"] = new SelectList(_context.Linkbacks, "LinkKey", "Name");
             return Page();
         }
 
@@ -36,7 +41,6 @@ namespace StrongBartending.Pages.Lead
             {
                 return Page();
             }
-
             Leads.Created = DateTime.Now;
             Leads.Modified = DateTime.Now;
             _context.Leads.Add(Leads);

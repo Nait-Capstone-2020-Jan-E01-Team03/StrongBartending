@@ -20,12 +20,6 @@
             @Html.DisplayFor(model => model.Leads.LegacyId)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Leads.LeadStat)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Leads.LeadStat)
-        </dd>
-        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Leads.EventDate)
         </dt>
         <dd class="col-sm-10">
@@ -36,24 +30,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Leads.StartTime)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Leads.EventTypeKey)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Leads.EventTypeKey)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Leads.BarPayKey)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Leads.BarPayKey)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Leads.BarTypeKey)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Leads.BarTypeKey)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Leads.Location)
@@ -72,12 +48,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Leads.Theme)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Leads.LinkKey)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Leads.LinkKey)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Leads.Notes)
@@ -110,10 +80,40 @@
             @Html.DisplayFor(model => model.Leads.ModifiedBy)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Leads.BarPayKeyNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Leads.BarPayKeyNavigation.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Leads.BarTypeKeyNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Leads.BarTypeKeyNavigation.Description)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Leads.ContactKeyNavigation)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Leads.ContactKeyNavigation.CreatedBy)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Leads.EventTypeKeyNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Leads.EventTypeKeyNavigation.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Leads.LeadStatNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Leads.LeadStatNavigation.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Leads.LinkKeyNavigation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Leads.LinkKeyNavigation.Name)
         </dd>
     </dl>
     

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using StrongBartending;
 using StrongBartending.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StrongBartending.Pages.Contact
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly StrongBartending.Data.StrongBartendingContext _context;

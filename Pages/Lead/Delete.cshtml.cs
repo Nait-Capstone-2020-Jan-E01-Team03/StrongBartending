@@ -30,7 +30,12 @@ namespace StrongBartending.Pages.Lead
             }
 
             Leads = await _context.Leads
-                .Include(l => l.ContactKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == id);
+                .Include(l => l.BarPayKeyNavigation)
+                .Include(l => l.BarTypeKeyNavigation)
+                .Include(l => l.ContactKeyNavigation)
+                .Include(l => l.EventTypeKeyNavigation)
+                .Include(l => l.LeadStatNavigation)
+                .Include(l => l.LinkKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == id);
 
             if (Leads == null)
             {

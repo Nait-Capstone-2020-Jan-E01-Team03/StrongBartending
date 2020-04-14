@@ -31,13 +31,23 @@ namespace StrongBartending.Pages.Lead
             }
 
             Leads = await _context.Leads
-                .Include(l => l.ContactKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == id);
+                .Include(l => l.BarPayKeyNavigation)
+                .Include(l => l.BarTypeKeyNavigation)
+                .Include(l => l.ContactKeyNavigation)
+                .Include(l => l.EventTypeKeyNavigation)
+                .Include(l => l.LeadStatNavigation)
+                .Include(l => l.LinkKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == id);
 
             if (Leads == null)
             {
                 return NotFound();
             }
-            ViewData["ContactKey"] = new SelectList(_context.Contacts, "ContactKey", "FullName");
+           ViewData["BarPayKey"] = new SelectList(_context.BarPays, "BarPayKey", "Description");
+           ViewData["BarTypeKey"] = new SelectList(_context.BarTypes, "BarTypeKey", "Description");
+           ViewData["ContactKey"] = new SelectList(_context.Contacts, "ContactKey", "FullName");
+           ViewData["EventTypeKey"] = new SelectList(_context.EventTypes, "EventTypeKey", "Description");
+           ViewData["LeadStat"] = new SelectList(_context.LeadStatus, "LeadStat", "Description");
+           ViewData["LinkKey"] = new SelectList(_context.Linkbacks, "LinkKey", "Name");
             return Page();
         }
 
@@ -49,7 +59,8 @@ namespace StrongBartending.Pages.Lead
             {
                 return Page();
             }
-
+            Leads.Modified = DateTime.Now;
+            Leads.ModifiedBy = User.Identity.Name;
             _context.Attach(Leads).State = EntityState.Modified;
 
             try

@@ -24,7 +24,12 @@ namespace StrongBartending.Pages.Lead
         public async Task OnGetAsync()
         {
             Leads = await _context.Leads
-                .Include(l => l.ContactKeyNavigation).ToListAsync();
+                .Include(l => l.BarPayKeyNavigation)
+                .Include(l => l.BarTypeKeyNavigation)
+                .Include(l => l.ContactKeyNavigation)
+                .Include(l => l.EventTypeKeyNavigation)
+                .Include(l => l.LeadStatNavigation)
+                .Include(l => l.LinkKeyNavigation).ToListAsync();
         }
     }
 }

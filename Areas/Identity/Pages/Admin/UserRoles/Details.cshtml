@@ -27,6 +27,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.AspNetUserRoles.User.Id">Edit</a> | |
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-page="./Index">Back to List</a>
 </div>

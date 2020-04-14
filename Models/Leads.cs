@@ -5,6 +5,11 @@ namespace StrongBartending
 {
     public partial class Leads
     {
+        public Leads()
+        {
+            EventDetails = new HashSet<EventDetails>();
+        }
+
         public int LeadKey { get; set; }
         public string LegacyId { get; set; }
         public int LeadStat { get; set; }
@@ -24,6 +29,12 @@ namespace StrongBartending
         public DateTime Modified { get; set; }
         public string ModifiedBy { get; set; }
 
+        public virtual BarPays BarPayKeyNavigation { get; set; }
+        public virtual BarTypes BarTypeKeyNavigation { get; set; }
         public virtual Contacts ContactKeyNavigation { get; set; }
+        public virtual EventTypes EventTypeKeyNavigation { get; set; }
+        public virtual LeadStatus LeadStatNavigation { get; set; }
+        public virtual Linkbacks LinkKeyNavigation { get; set; }
+        public virtual ICollection<EventDetails> EventDetails { get; set; }
     }
 }

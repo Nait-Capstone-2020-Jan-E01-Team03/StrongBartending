@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StrongBartending;
 using StrongBartending.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace StrongBartending.Pages.Contact
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly StrongBartending.Data.StrongBartendingContext _context;

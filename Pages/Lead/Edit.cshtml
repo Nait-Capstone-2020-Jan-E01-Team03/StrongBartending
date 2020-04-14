@@ -21,11 +21,6 @@
                 <span asp-validation-for="Leads.LegacyId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Leads.LeadStat" class="control-label"></label>
-                <input asp-for="Leads.LeadStat" class="form-control" />
-                <span asp-validation-for="Leads.LeadStat" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Leads.EventDate" class="control-label"></label>
                 <input asp-for="Leads.EventDate" class="form-control" />
                 <span asp-validation-for="Leads.EventDate" class="text-danger"></span>
@@ -37,17 +32,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="Leads.EventTypeKey" class="control-label"></label>
-                <input asp-for="Leads.EventTypeKey" class="form-control" />
+                <select asp-for="Leads.EventTypeKey" class="form-control" asp-items="ViewBag.EventTypeKey"></select>
                 <span asp-validation-for="Leads.EventTypeKey" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Leads.BarPayKey" class="control-label"></label>
-                <input asp-for="Leads.BarPayKey" class="form-control" />
+                <select asp-for="Leads.BarPayKey" class="form-control" asp-items="ViewBag.BarPayKey"></select>
                 <span asp-validation-for="Leads.BarPayKey" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Leads.BarTypeKey" class="control-label"></label>
-                <input asp-for="Leads.BarTypeKey" class="form-control" />
+                <select asp-for="Leads.BarTypeKey" class="form-control" asp-items="ViewBag.BarTypeKey"></select>
                 <span asp-validation-for="Leads.BarTypeKey" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -67,12 +62,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Leads.ContactKey" class="control-label"></label>
-                <select asp-for="Leads.ContactKey" class="form-control" asp-items="ViewBag.ContactKey" readonly></select>
+                <select asp-for="Leads.ContactKey" class="form-control" asp-items="ViewBag.ContactKey"></select>
                 <span asp-validation-for="Leads.ContactKey" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Leads.LinkKey" class="control-label"></label>
-                <input asp-for="Leads.LinkKey" class="form-control" />
+                <select asp-for="Leads.LinkKey" class="form-control" asp-items="ViewBag.LinkKey"></select>
                 <span asp-validation-for="Leads.LinkKey" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -97,8 +92,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Leads.ModifiedBy" class="control-label"></label>
-                <input asp-for="Leads.ModifiedBy" class="form-control" value="@User.Identity.Name" readonly/>
+                <input asp-for="Leads.ModifiedBy" class="form-control" readonly />
                 <span asp-validation-for="Leads.ModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Leads.LeadStat" class="control-label"></label>
+                <select asp-for="Leads.LeadStat" class="form-control" asp-items="ViewBag.LeadStat"></select>
+                <span asp-validation-for="Leads.LeadStat" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
