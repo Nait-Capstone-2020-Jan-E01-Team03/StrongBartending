@@ -1,0 +1,61 @@
+﻿@page
+@model StrongBartending.Pages.EventDetail.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>EventDetails</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="EventDetails.LineKey" />
+            <div class="form-group">
+                <label asp-for="EventDetails.LeadKey" class="control-label"></label>
+                <select asp-for="EventDetails.LeadKey" class="form-control" asp-items="ViewBag.LeadKey"></select>
+                <span asp-validation-for="EventDetails.LeadKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventDetails.EventKey" class="control-label"></label>
+                <input asp-for="EventDetails.EventKey" class="form-control" />
+                <span asp-validation-for="EventDetails.EventKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventDetails.LineStat" class="control-label"></label>
+                <select asp-for="EventDetails.LineStat" class="form-control" asp-items="ViewBag.LineStat"></select>
+                <span asp-validation-for="EventDetails.LineStat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventDetails.ServiceKey" class="control-label"></label>
+                <select asp-for="EventDetails.ServiceKey" class="form-control" asp-items="ViewBag.ServiceKey"></select>
+                <span asp-validation-for="EventDetails.ServiceKey" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventDetails.Description" class="control-label"></label>
+                <input asp-for="EventDetails.Description" class="form-control" />
+                <span asp-validation-for="EventDetails.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventDetails.Price" class="control-label"></label>
+                <input asp-for="EventDetails.Price" class="form-control" />
+                <span asp-validation-for="EventDetails.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -58,7 +58,8 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.LeadKey">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.LeadKey">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.LeadKey">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.LeadKey">Delete</a> |
+                <a asp-page="/EventDetail/Create" asp-route-id="@item.LeadKey">To Event</a>
             </td>
         </tr>
 }

@@ -1,0 +1,103 @@
+﻿@page
+@model StrongBartending.Pages.Event.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Reminder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].BarOpen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].BarClose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].StaffCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Subtotal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Gst)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Gratuity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].ContactKeyNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Events[0].EventStatNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Events) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reminder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BarOpen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BarClose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StaffCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subtotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gst)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gratuity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactKeyNavigation.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EventStatNavigation.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EventKey">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EventKey">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EventKey">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

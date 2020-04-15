@@ -586,3 +586,18 @@ C:\Users\Jiawei\Desktop\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Lea
 C:\Users\Jiawei\Desktop\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Lead\Details.cshtml.g.cs
 C:\Users\Jiawei\Desktop\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Lead\Edit.cshtml.g.cs
 C:\Users\Jiawei\Desktop\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Lead\Index.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Event\Create.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Event\Delete.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Event\Details.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Event\Edit.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\Event\Index.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\EventDetail\Create.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\EventDetail\Delete.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\EventDetail\Details.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\EventDetail\Edit.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\EventDetail\Index.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\LeadStatu\Create.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\LeadStatu\Delete.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\LeadStatu\Details.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\LeadStatu\Edit.cshtml.g.cs
+C:\Users\Jiawei\Desktop\3rd year\3990\StrongBartending\obj\Debug\netcoreapp3.0\Razor\Pages\LeadStatu\Index.cshtml.g.cs

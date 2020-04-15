@@ -114,6 +114,7 @@ CREATE TABLE Leads
 	constraint FK_Linkbacks foreign key(LinkKey) references Linkbacks(LinkKey),
 ); 
 GO
+drop table Events
 CREATE TABLE Events
 (
 	EventKey int identity(1,1) not null,
@@ -142,6 +143,7 @@ GO
 * spAcceptProposal converts the Lead to Closed, and creates a new Event
 * Event Detail Lines are updated from Pending to Open
 */
+drop table EventDetails
 CREATE TABLE EventDetails
 (	
 	LineKey int identity(1,1) not null,--Event Details Line Primary Key

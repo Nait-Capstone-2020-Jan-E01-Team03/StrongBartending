@@ -1,0 +1,88 @@
+﻿@page
+@model StrongBartending.Pages.Event.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Events</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Events.EventStat" class="control-label"></label>
+                <select asp-for="Events.EventStat" class ="form-control" asp-items="ViewBag.EventStat"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.ContactKey" class="control-label"></label>
+                <select asp-for="Events.ContactKey" class ="form-control" asp-items="ViewBag.ContactKey"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.Reminder" class="control-label"></label>
+                <input asp-for="Events.Reminder" class="form-control" />
+                <span asp-validation-for="Events.Reminder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.BarOpen" class="control-label"></label>
+                <input asp-for="Events.BarOpen" class="form-control" />
+                <span asp-validation-for="Events.BarOpen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.BarClose" class="control-label"></label>
+                <input asp-for="Events.BarClose" class="form-control" />
+                <span asp-validation-for="Events.BarClose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.Hours" class="control-label"></label>
+                <input asp-for="Events.Hours" class="form-control" />
+                <span asp-validation-for="Events.Hours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.StaffCount" class="control-label"></label>
+                <input asp-for="Events.StaffCount" class="form-control" />
+                <span asp-validation-for="Events.StaffCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.Notes" class="control-label"></label>
+                <input asp-for="Events.Notes" class="form-control" />
+                <span asp-validation-for="Events.Notes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.Subtotal" class="control-label"></label>
+                <input asp-for="Events.Subtotal" class="form-control" />
+                <span asp-validation-for="Events.Subtotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.Gst" class="control-label"></label>
+                <input asp-for="Events.Gst" class="form-control" />
+                <span asp-validation-for="Events.Gst" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.Gratuity" class="control-label"></label>
+                <input asp-for="Events.Gratuity" class="form-control" />
+                <span asp-validation-for="Events.Gratuity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Events.Total" class="control-label"></label>
+                <input asp-for="Events.Total" class="form-control" />
+                <span asp-validation-for="Events.Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
