@@ -41,7 +41,11 @@ namespace StrongBartending.Data
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=BBS\\SQLEXPRESS;Database=StrongBartending; Trusted_Connection=True");
+                //MING
+                //optionsBuilder.UseSqlServer("Server=(localdb)\\SQLEXPRESS;Database=StrongBartending; Trusted_Connection=True");
+
+                //MARK
+                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=StrongBartending;Trusted_Connection=True;");
             }
         }
 
@@ -413,7 +417,7 @@ namespace StrongBartending.Data
 
                 entity.Property(e => e.Price).HasColumnType("decimal(6, 2)");
 
-                entity.Property(e => e.Uom)
+                entity.Property(e => e.UOM)
                     .IsRequired()
                     .HasColumnName("UOM")
                     .HasMaxLength(10)
