@@ -7,7 +7,7 @@ INSERT INTO BarTypes(Description)
 VALUES ('Dry - Non-Alcoholic'),('Standard - Beer, Wine, Spirits '),('Deluxe - Beer, Wine, Spirits, Cocktails'),('Custom - Deluxe plus His and Hers Cocktails')
 --BAR PAYS
 INSERT INTO BarPays(Description)
-VALUES ('Open'),('Ticket'),('Coin'),('Cash'),('Card')
+VALUES ('Open'),('Ticket'),('Coin'),('Cash'),('Full')
 --EVENT TYPES
 INSERT INTO EventTypes(Description) 
 VALUES ('Anniversary'),('Birthday'),('Charity'),('Christmas'),('Corporate'),('Other'),('Wedding'); 
@@ -19,7 +19,7 @@ INSERT INTO Linkbacks(Name,URL)
 VALUES  ('Facebook','facebook.com/strongbartending'),('Instagram','instagram.com/strongbartending'),('Wedding Wire','weddingwire.com/strongbartending')
 --LEADSTATUS
 INSERT INTO LeadStatus(Description)
-VALUES ('New'),('Call'),('Proposal'),('Invoice'),('Deposit'),('Paid'),('Complete'); 
+VALUES ('New'),('Call'),('Proposal'),('Complete'),('Invoice'),('Deposit'),('Closed'),('Cancelled'); 
 --LINESTATUS
 INSERT INTO LineStatus(Description)
 VALUES ('Pending'),('Open'),('Invoiced'),('Complete');
@@ -55,9 +55,5 @@ INSERT INTO EventDetails(LeadKey,LineStat,ServiceKey,Description,Price) VALUES
 
 --EVENTS
 --EVENTS ARE INSERTED BY THE spAcceptProposal PROCEDURE
-
 INSERT INTO Events(EventStat,ContactKey,Reminder,BarOpen,BarClose,Hours,StaffCount,Notes,Subtotal,GST,Gratuity,Total) VALUES
 (1,1,'2020-03-14','09:30 AM','04:30 PM', 8, 2, 'Quick-insert event to show data on the Proposal',90.00,4.50,16.20,110.70)
-
-select * from Contacts
-select * from EventStatus

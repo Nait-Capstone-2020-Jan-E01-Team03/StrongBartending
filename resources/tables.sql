@@ -118,7 +118,8 @@ drop table Events
 CREATE TABLE Events
 (
 	EventKey int identity(1,1) not null,
-	EventStat int not null,--Pending until it is converted to an Event > Open until it is converted to an Invoice> Closed
+	EventStat int not null,--Open until it is posted to Calendar > Scheduled, until it is completed > Invoiced
+	LeadKey int not null, 
 	ContactKey int not null, --FK | Contact
 	Reminder date not null, --Event Date - 14 Days
 	BarOpen time null, --Time HH:MM PM
@@ -131,6 +132,7 @@ CREATE TABLE Events
 	Gratuity decimal (3,2) not null, -- Calulated as Subtotal * .18 before inserting
 	Total decimal(8,2) not null, -- Calculated as Subtotal+GST+Gratuity before inserting
 	constraint PK_Events primary key(EventKey),
+	constraint FK_LeadKey foreign key(LeadKey) references Leads(LeadKey),
 	constraint FK_EventStatus foreign key(EventStat) references EventStatus(EventStat),
 	constraint FK_ContactKey foreign key(ContactKey) references Contacts(ContactKey)
 );
