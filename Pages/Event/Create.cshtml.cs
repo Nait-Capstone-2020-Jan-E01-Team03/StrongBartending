@@ -26,13 +26,13 @@ namespace StrongBartending.Pages.Event
         public decimal Gratuity = 0;
 
         public decimal Total = 0;
-
         public Leads Leads { get; set; }
 
         public IList<EventDetails> EventDetails { get; set; }
 
         [BindProperty]
         public Events Events { get; set; }
+        public Events EventsCreated { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -97,8 +97,29 @@ namespace StrongBartending.Pages.Event
                 .Include(l => l.LeadStatNavigation)
                 .Include(l => l.LinkKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == Events.LeadKey);
 
+            Leads.LeadStat = 4;
+
             await _context.SaveChangesAsync();
 
+            EventsCreated = await _context.Events
+                .Include(e => e.ContactKeyNavigation)
+                .Include(e => e.EventStatNavigation).FirstOrDefaultAsync(m => m.LeadKey == Events.LeadKey);
+
+            EventDetails = await _context.EventDetails
+                           .Include(e => e.LeadKeyNavigation)
+                           .Include(e => e.LineStatNavigation)
+                           .Include(e => e.ServiceKeyNavigation).ToListAsync();
+
+            EventDetails = EventDetails.Where(e => e.LeadKey == Events.LeadKey).ToList();
+
+
+            foreach (EventDetails item in EventDetails)
+            {
+                item.LineStat = 2;
+                item.EventKey = EventsCreated.EventKey;
+            }
+
+            await _context.SaveChangesAsync();
 
 
             return RedirectToPage("./Index");

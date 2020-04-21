@@ -20,6 +20,8 @@ namespace StrongBartending.Pages.Report
             _context = context;
         }
         public Leads Leads { get; set; }
+
+        public Contacts Contacts { get; set; }
         public IList<EventDetails> EventDetails { get; set; }
 
         public decimal subtotal = 0;
@@ -57,14 +59,7 @@ namespace StrongBartending.Pages.Report
                 subtotal = subtotal + item.Price;
             }
 
-            subtotal = decimal.Round(subtotal, 2);
-
-            GST = decimal.Round((subtotal * Convert.ToDecimal(0.05)), 2);
-
-            Gratuity = decimal.Round((subtotal * Convert.ToDecimal(0.18)), 2);
-
-            Total = decimal.Round((subtotal + GST + Gratuity), 2);
-
+            Contacts = await _context.Contacts.FirstOrDefaultAsync(m => m.ContactKey == Leads.ContactKey);
 
             if (Leads == null)
             {
@@ -73,6 +68,23 @@ namespace StrongBartending.Pages.Report
 
 
             return Page();
+        }
+        public async Task<IActionResult> OnPostAsync(int? id)
+        {
+            Leads = await _context.Leads
+                .Include(l => l.BarPayKeyNavigation)
+                .Include(l => l.BarTypeKeyNavigation)
+                .Include(l => l.ContactKeyNavigation)
+                .Include(l => l.EventTypeKeyNavigation)
+                .Include(l => l.LeadStatNavigation)
+                .Include(l => l.LinkKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == id);
+
+            Leads.LeadStat = 3;
+
+            _context.Attach(Leads).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("/Lead/Index");
         }
 
     }

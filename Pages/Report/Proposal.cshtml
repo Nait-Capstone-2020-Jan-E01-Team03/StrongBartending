@@ -5,5 +5,182 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Proposal Reports</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bartending</h1>
+        <h1 style="font-size:60px;">PROPOSAL</h1>
+    </header>
+    <hr />
+    <main>
+        <div>
+            <form>
+                <div id="CusInfo" style="padding-bottom:50px">
+                    <h1 style="color:gray; padding-bottom:20px">Bride name & Groom Name</h1>
+                    <table>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Customer Phone:</b>
+                            </td>
+                            <td>
+                                @Model.Contacts.Phone
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Customer Email:</b>
+                            </td>
+                            <td>
+                                @Model.Contacts.Email
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Event Date:</b>
+                            </td>
+                            <td>
+                                @Model.Leads.EventDate.ToShortDateString()
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="EvenInfo" style="padding-bottom:50px">
+                    <h2 style="padding-bottom:20px">Event Information</h2>
+                    <table>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Legacy ID:</b>
+                            </td>
+                            <td style="padding-right:100px">
+                                @Model.Leads.LegacyId
+                            </td>
+                            <td style="padding-right:100px">
+                                <b>Aenue Address:</b>
+                            </td>
+                            <td>
+                                @Model.Leads.Location
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Event Contact:</b>
+                            </td>
+                            <td style="padding-right:100px">
+                                @Model.Contacts.FullName
+                            </td>
+                            <td style="padding-right:100px">
+                                <b>Event Contact Phone:</b>
+                            </td>
+                            <td>
+                                @Model.Contacts.Phone
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Approx. Guest Count:</b>
+                            </td>
+                            <td style="padding-right:100px">
+                                @Model.Leads.Guests
+                            </td>
+                            <td style="padding-right:100px">
+                                <b>Bar Type:</b>
+                            </td>
+                            <td>
+                                @Model.Leads.BarTypeKeyNavigation.Description
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Bar Opens</b>
+                            </td>
+                            <td style="padding-right:100px">
+                                @Model.Leads.StartTime
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Theme/Colours</b>
+                            </td>
+                            <td style="padding-right:100px">
+                                @Model.Leads.Theme
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-right:100px">
+                                <b>Additional Information:</b>
+                            </td>
+                            <td style="padding-right:100px">
+                                @Model.Leads.Notes
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="AvaServices" style="padding-bottom:50px">
+                    <h1 style="padding-bottom:50px;text-align:center">Available Services</h1>
+                    <table>
+                        @foreach (var item in Model.EventDetails)
+                        {
+                            <tr>
+                                <td>
+                                    <h4>
+                                        @item.ServiceKeyNavigation.Description
+                                        -
+                                        $@item.ServiceKeyNavigation.Price
+                                        /@item.ServiceKeyNavigation.Uom
+                                    </h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    @item.Description
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </div>
+                <div id="Closing" style="padding-bottom:50px">
+                    <h1 style="padding-bottom:50px;text-align:center">Closing</h1>
+                    <table>
+                        <tr>
+                            <td>
+                                <p>
+                                    Strong Bartending will travel to venues in the Edmonton area at no additional cost. For travel outside of
+                                    the Edmonton area, additional charges will apply. A flat rate based on distance will be charged.
+                                </p>
+                                <p>
+                                    A NON-REFUNDABLE booking fee of 40% is required to complete the booking with the remaining 60%
+                                    paid no later than 14 days prior to the event date.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <div>
+            <form method="post">
+                <div class="form-group">
+                    <input type="submit" value="Propose" class="btn btn-primary" asp-route-id="@Model.Leads.LeadKey"/>
+                </div>
+                <div class="form-group">
+                    <a asp-page="/Lead/Index" class="btn btn-secondary">Back to Lead List</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>
 
