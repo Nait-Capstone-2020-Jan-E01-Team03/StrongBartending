@@ -11,11 +11,11 @@ using StrongBartending.Data;
 
 namespace StrongBartending.Pages.Report
 {
-    public class IndexModel : PageModel
+    public class ProposalModel : PageModel
     {
         private readonly StrongBartending.Data.StrongBartendingContext _context;
 
-        public IndexModel(StrongBartending.Data.StrongBartendingContext context)
+        public ProposalModel(StrongBartending.Data.StrongBartendingContext context)
         {
             _context = context;
         }

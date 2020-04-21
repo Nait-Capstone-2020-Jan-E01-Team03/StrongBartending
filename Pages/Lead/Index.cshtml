@@ -57,10 +57,8 @@
                 {
                     <a asp-page="./Edit" asp-route-id="@item.LeadKey">Edit |</a>
                     <a asp-page="./Delete" asp-route-id="@item.LeadKey">Cancel |</a>
-                    <a asp-page="/Report/Proposal" asp-route-id="@item.LeadKey">Proposal |</a>
+                    <a asp-page="/Report/Proposal" asp-route-id="@item.LeadKey">Propose |</a>
                     <a asp-page="/Event/Create" asp-route-id="@item.LeadKey">Add to Event |</a>
-                    <a asp-page="./Details" asp-route-id="@item.LeadKey">Lead Details |</a>
-                    <a asp-page="/EventDetail/Index" asp-route-id="@item.LeadKey">Service Items </a>
                 }
                 <a asp-page="./Details" asp-route-id="@item.LeadKey">Lead Details |</a>
                 <a asp-page="/EventDetail/Index" asp-route-id="@item.LeadKey">Service Items </a>

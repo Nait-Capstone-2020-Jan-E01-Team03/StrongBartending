@@ -9,7 +9,10 @@
 <h1>Event Detail</h1>
 
 <p>
+    @if(Model.Leads.LeadStat ==1 || Model.Leads.LeadStat ==2  ||Model.Leads.LeadStat ==3 )
+    { 
     <a asp-page="/EventDetail/Create" asp-route-id="@Model.ID">Create New</a>
+    }
 </p>
 <table class="table">
     <thead>
@@ -46,11 +49,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ServiceKeyNavigation.Description)
             </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.LineKey">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.LineKey">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.LineKey">Delete</a>
-            </td>
+                <td>
+                     @if (Model.Leads.LeadStat == 1 || Model.Leads.LeadStat == 2 || Model.Leads.LeadStat == 3)
+                    {
+                    <a asp-page="./Edit" asp-route-id="@item.LineKey">Edit |</a> 
+                    <a asp-page="./Delete" asp-route-id="@item.LineKey">Delete</a>
+                    }
+                </td>
         </tr>
 }
 

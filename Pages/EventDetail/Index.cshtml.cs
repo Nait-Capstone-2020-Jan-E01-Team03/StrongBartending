@@ -20,11 +20,22 @@ namespace StrongBartending.Pages.EventDetail
         }
         public int? ID;
 
+        public Leads Leads { get; set; }
+
         public IList<EventDetails> EventDetails { get;set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             ID = id;
+
+            Leads = await _context.Leads
+                .Include(l => l.BarPayKeyNavigation)
+                .Include(l => l.BarTypeKeyNavigation)
+                .Include(l => l.ContactKeyNavigation)
+                .Include(l => l.EventTypeKeyNavigation)
+                .Include(l => l.LeadStatNavigation)
+                .Include(l => l.LinkKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == id);
+
             EventDetails = await _context.EventDetails
                 .Include(e => e.LeadKeyNavigation)
                 .Include(e => e.LineStatNavigation)

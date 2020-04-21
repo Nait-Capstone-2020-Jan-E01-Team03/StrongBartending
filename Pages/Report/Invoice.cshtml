@@ -5,5 +5,190 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Invoice</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <header>
+        <h1 style="text-align:center;font-size:60px">Invoice</h1>
+    </header>
+    <hr />
+    <main>
+        <main>
+            <div>
+                <form>
+                    <div id="Header" style="padding-bottom:50px">
+                        <div>
+                            <table style="width:100%">
+                                <tr>
+                                    <td style="padding-right:100px;text-align:left">
+                                        Strong Bartending
+                                    </td>
+                                    <td style="float:right">
+                                        <u>Chris@Strongbartending.com</u>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right:100px;text-align:left">
+                                        12811 159 Ave NW
+                                    </td>
+                                    <td style="float:right">
+                                        <u>www.strongbartending.com</u>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right:100px;text-align:left">
+                                        Edmonton, AB T6V 1B2
+                                    </td>
+                                    <td style="float:right">
+                                        780-716-3041
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="padding-top:50px;">
+                            <table style="width:100%">
+                                <tr>
+                                    <td style="padding-right:100px;text-align:left">
+                                        <p><b>Bill To:</b></p>
+                                        <p>@Model.Contacts.FullName</p>
+                                    </td>
+                                    <td style="float:right">
+                                        Invoice Number:
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right:100px;text-align:left">
+                                    </td>
+                                    <td style="float:right">
+                                        <p>Inovice Date: @DateTime.Now.ToShortDateString()</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-right:100px;text-align:left">
+                                        <p>Email: @Model.Contacts.Email</p>
+                                    </td>
+                                    <td style="float:right">
+                                        <p>Service Date: @Model.Leads.EventDate.ToShortDateString()</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="AvaServices" style="padding-bottom:50px">
+                        <h1 style="padding-bottom:50px;text-align:center">Services Provided</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Item #
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Service
+                                    </th>
+                                    <th>
+                                        Price
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{int I = 0; }
+                                @foreach (var item in Model.EventDetails)
+                                {
+                                    I++;
+                                    <tr>
+                                        <td>
+                                            @I
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ServiceKeyNavigation.Description)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Price)
+                                        </td>
+                                    </tr>
+                                }
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        Subtotal: @Model.subtotal
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        GST 5%: @Model.GST
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        Gratuity: @Model.Gratuity
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                        Total: @Model.Total
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="text-align:center;font-style:italic;">
+                        <p>Thank you for your business!</p>
+                    </div>
+                </form>
+
+            </div>
+            <div>
+                <form method="post">
+                    <div class="form-group">
+                        <input type="submit" value="Invoice sent" class="btn btn-primary" asp-route-id="@Model.Leads.LeadKey" />
+                    </div>
+                    <div class="form-group">
+                        <a asp-page="/Event/Index" class="btn btn-secondary">Back to Event List</a>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>
 

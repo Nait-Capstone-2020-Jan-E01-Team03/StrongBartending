@@ -54,7 +54,7 @@
             </td>
             <td>
                 <a asp-page="./Details" asp-route-id="@item.EventKey">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.EventKey">Cancel</a>
+                <a asp-page="/Report/Invoice" asp-route-id="@item.LeadKey">Generate invoice</a>
             </td>
         </tr>
 }
