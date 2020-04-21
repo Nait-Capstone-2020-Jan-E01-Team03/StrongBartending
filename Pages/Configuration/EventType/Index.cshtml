@@ -1,0 +1,37 @@
+﻿@page
+@model StrongBartending.Pages.Configuration.EventType.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventTypes[0].Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.EventTypes) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.EventTypeKey">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.EventTypeKey">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.EventTypeKey">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
