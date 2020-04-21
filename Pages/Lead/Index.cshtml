@@ -21,9 +21,6 @@
                 Event Date
             </th>
             <th>
-                Start Time
-            </th>
-            <th>
                 Location
             </th>
             <th>
@@ -44,10 +41,7 @@
                 @Html.DisplayFor(modelItem => item.LegacyId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EventDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartTime)
+                @item.EventDate.ToShortDateString()
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Location)
@@ -59,11 +53,12 @@
                 @Html.DisplayFor(modelItem => item.EventTypeKeyNavigation.Description)
             </td>
             <td>
-                @if (item.LeadStat != 7)
+                @if (item.LeadStat != 8)
                 {
                     <a asp-page="./Edit" asp-route-id="@item.LeadKey">Edit |</a>
                     <a asp-page="./Delete" asp-route-id="@item.LeadKey">Cancel |</a>
-                    <a asp-page="/Event/Create" asp-route-id="@item.LeadKey">Proposal |</a>
+                    <a asp-page="/Report/Proposal" asp-route-id="@item.LeadKey">Proposal |</a>
+                    <a asp-page="/Event/Create" asp-route-id="@item.LeadKey">Add to Event |</a>
                 }
                 <a asp-page="./Details" asp-route-id="@item.LeadKey">Lead Details |</a>
                 <a asp-page="/EventDetail/Index" asp-route-id="@item.LeadKey">Service Items </a>

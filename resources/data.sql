@@ -22,7 +22,7 @@ INSERT INTO LeadStatus(Description)
 VALUES ('New'),('Call'),('Proposal'),('Complete'),('Invoice'),('Deposit'),('Closed'),('Cancelled'); 
 --LINESTATUS
 INSERT INTO LineStatus(Description)
-VALUES ('Pending'),('Open'),('Invoiced'),('Complete');
+VALUES ('Pending'),('Open'),('Invoiced'),('Complete'),('Canceled');
 --EVENTSTATUS
 INSERT INTO EventStatus(Description)
 VALUES ('Open'),('Scheduled'),('Complete')

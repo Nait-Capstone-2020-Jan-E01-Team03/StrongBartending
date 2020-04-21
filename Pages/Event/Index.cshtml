@@ -15,49 +15,30 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Events[0].Reminder)
+                Reminder
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Events[0].BarOpen)
+                Open Time
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Events[0].BarClose)
+                Close Time
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Events[0].Hours)
+                Contact
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Events[0].StaffCount)
+                Status
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Events[0].Notes)
+                Actions
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Events[0].Subtotal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Events[0].Gst)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Events[0].Gratuity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Events[0].Total)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Events[0].ContactKeyNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Events[0].EventStatNavigation)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Events) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Reminder)
+                @item.Reminder.ToShortDateString()
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BarOpen)
@@ -66,36 +47,14 @@
                 @Html.DisplayFor(modelItem => item.BarClose)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Hours)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StaffCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Subtotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gst)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gratuity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactKeyNavigation.CreatedBy)
+                @Html.DisplayFor(modelItem => item.ContactKeyNavigation.FullName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EventStatNavigation.Description)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.EventKey">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.EventKey">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.EventKey">Delete</a>
+                <a asp-page="./Delete" asp-route-id="@item.EventKey">Cancel</a>
             </td>
         </tr>
 }

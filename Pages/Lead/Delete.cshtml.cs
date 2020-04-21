@@ -58,7 +58,7 @@ namespace StrongBartending.Pages.Lead
 
             if (Leads != null)
             {
-                Leads.LeadStat = 7;
+                Leads.LeadStat = 8;
                 _context.Attach(Leads).State = EntityState.Modified;
 
                 EventDetails = await _context.EventDetails
@@ -72,7 +72,7 @@ namespace StrongBartending.Pages.Lead
                 { 
                     if(items.LeadKey==Leads.LeadKey)
                     {
-                        items.LineStat = 4;
+                        items.LineStat = 5;
                         _context.Attach(items).State = EntityState.Modified;
                     }
                 

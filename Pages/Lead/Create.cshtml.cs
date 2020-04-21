@@ -41,6 +41,7 @@ namespace StrongBartending.Pages.Lead
             {
                 return Page();
             }
+
             Leads.Created = DateTime.Now;
             Leads.Modified = DateTime.Now;
             Leads.LeadStat = 1;
