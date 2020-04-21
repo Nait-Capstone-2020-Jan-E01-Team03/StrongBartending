@@ -6,49 +6,39 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Event Detail</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="/EventDetail/Create" asp-route-id="@Model.ID">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.EventDetails[0].EventKey)
+                Description
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EventDetails[0].Description)
+                Price
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EventDetails[0].Price)
+                Status
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EventDetails[0].LeadKeyNavigation)
+                Service
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.EventDetails[0].LineStatNavigation)
+                Action
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EventDetails[0].ServiceKeyNavigation)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.EventDetails) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.EventKey)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LeadKeyNavigation.CreatedBy)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.LineStatNavigation.Description)
@@ -63,5 +53,7 @@
             </td>
         </tr>
 }
+
     </tbody>
 </table>
+<a asp-page="/Lead/Index">Back to Lead List</a>

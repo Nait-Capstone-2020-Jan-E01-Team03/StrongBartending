@@ -43,7 +43,7 @@ namespace StrongBartending.Pages.EventDetail
             {
                 return NotFound();
             }
-            ViewData["LeadKey"] = new SelectList(_context.Leads, "LeadKey", "CreatedBy");
+            ViewData["LeadKey"] = new SelectList(_context.Leads, "LeadKey", "LeadKey");
             ViewData["LineStat"] = new SelectList(_context.LineStatus, "LineStat", "Description");
             ViewData["ServiceKey"] = new SelectList(_context.Services, "ServiceKey", "Description");
             return Page();
@@ -59,10 +59,12 @@ namespace StrongBartending.Pages.EventDetail
                 return Page();
             }
 
+            EventDetails.LineStat = 1;
             _context.EventDetails.Add(EventDetails);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+
+            return RedirectToPage("./Index", new { id = EventDetails.LeadKey });
         }
     }
 }

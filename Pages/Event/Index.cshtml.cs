@@ -24,6 +24,7 @@ namespace StrongBartending.Pages.Event
         public async Task OnGetAsync()
         {
             Events = await _context.Events
+                .Include(e => e.LeadKeyNavigation)
                 .Include(e => e.ContactKeyNavigation)
                 .Include(e => e.EventStatNavigation).ToListAsync();
         }

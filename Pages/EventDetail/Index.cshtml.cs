@@ -18,15 +18,22 @@ namespace StrongBartending.Pages.EventDetail
         {
             _context = context;
         }
+        public int? ID;
 
         public IList<EventDetails> EventDetails { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
+            ID = id;
             EventDetails = await _context.EventDetails
                 .Include(e => e.LeadKeyNavigation)
                 .Include(e => e.LineStatNavigation)
                 .Include(e => e.ServiceKeyNavigation).ToListAsync();
+
+            EventDetails = EventDetails.Where(e => e.LeadKey == id).ToList();
+            return Page();
+
+
         }
     }
 }

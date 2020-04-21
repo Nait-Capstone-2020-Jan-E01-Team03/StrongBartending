@@ -56,7 +56,7 @@ namespace StrongBartending.Pages.EventDetail
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { id = EventDetails.LeadKey });
         }
     }
 }

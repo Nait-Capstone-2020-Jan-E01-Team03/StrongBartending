@@ -8,6 +8,7 @@ namespace StrongBartending
         public Leads()
         {
             EventDetails = new HashSet<EventDetails>();
+            Events = new HashSet<Events>();
         }
 
         public int LeadKey { get; set; }
@@ -36,5 +37,6 @@ namespace StrongBartending
         public virtual LeadStatus LeadStatNavigation { get; set; }
         public virtual Linkbacks LinkKeyNavigation { get; set; }
         public virtual ICollection<EventDetails> EventDetails { get; set; }
+        public virtual ICollection<Events> Events { get; set; }
     }
 }

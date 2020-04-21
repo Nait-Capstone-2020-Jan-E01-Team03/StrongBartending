@@ -20,10 +20,6 @@
                 <span asp-validation-for="Leads.LegacyId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Leads.LeadStat" class="control-label"></label>
-                <select asp-for="Leads.LeadStat" class="form-control" asp-items="ViewBag.LeadStat"></select>
-            </div>
-            <div class="form-group">
                 <label asp-for="Leads.EventDate" class="control-label"></label>
                 <input type ="date" asp-for="Leads.EventDate" class="form-control" />
                 <span asp-validation-for="Leads.EventDate" class="text-danger"></span>

@@ -94,7 +94,7 @@
             Contact
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Leads.ContactKeyNavigation.CreatedBy)
+            @Html.DisplayFor(model => model.Leads.ContactKeyNavigation.FullName)
         </dd>
         <dt class="col-sm-2">
             Event Type
@@ -117,6 +117,7 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.Leads.LeadKey">Edit</a> |
+    @if (Model.Leads.LeadStat != 7)
+    {<a asp-page="./Edit" asp-route-id="@Model.Leads.LeadKey">Edit |</a>}
     <a asp-page="./Index">Back to List</a>
 </div>

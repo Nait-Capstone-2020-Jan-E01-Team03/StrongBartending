@@ -8,7 +8,7 @@
 
 <h1>Create</h1>
 
-<h4>EventDetails</h4>
+<h4>Event Details</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -16,7 +16,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-group">
-                <label class="control-label">LegacyID</label>
+                <label class="control-label">Legacy ID</label>
                 <input class="form-control" value="@Model.Leads.LegacyId" readonly/>
             </div>
 
@@ -32,20 +32,16 @@
                 <span asp-validation-for="EventDetails.EventKey" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EventDetails.LineStat" class="control-label"></label>
-                <select asp-for="EventDetails.LineStat" class="form-control" asp-items="ViewBag.LineStat"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="EventDetails.ServiceKey" class="control-label"></label>
+                <label class="control-label">Services</label>
                 <select asp-for="EventDetails.ServiceKey" class="form-control" asp-items="ViewBag.ServiceKey"></select>
             </div>
             <div class="form-group">
-                <label asp-for="EventDetails.Description" class="control-label"></label>
+                <label class="control-label">Description</label>
                 <input asp-for="EventDetails.Description" class="form-control" />
                 <span asp-validation-for="EventDetails.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EventDetails.Price" class="control-label"></label>
+                <label class="control-label">Price</label>
                 <input asp-for="EventDetails.Price" class="form-control" />
                 <span asp-validation-for="EventDetails.Price" class="text-danger"></span>
             </div>

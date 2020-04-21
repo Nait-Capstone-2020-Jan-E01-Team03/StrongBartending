@@ -290,7 +290,14 @@ namespace StrongBartending.Data
                     .HasForeignKey(d => d.EventStat)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_EventStatus");
+
+                entity.HasOne(d => d.LeadKeyNavigation)
+                    .WithMany(p => p.Events)
+                    .HasForeignKey(d => d.LeadKey)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_EvnetLeadKey");
             });
+
 
             modelBuilder.Entity<LeadStatus>(entity =>
             {
@@ -417,7 +424,7 @@ namespace StrongBartending.Data
 
                 entity.Property(e => e.Price).HasColumnType("decimal(6, 2)");
 
-                entity.Property(e => e.UOM)
+                entity.Property(e => e.Uom)
                     .IsRequired()
                     .HasColumnName("UOM")
                     .HasMaxLength(10)

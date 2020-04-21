@@ -22,6 +22,8 @@ namespace StrongBartending.Pages.Lead
         [BindProperty]
         public Leads Leads { get; set; }
 
+        public EventDetails EventDetail { get; set; }
+        public IList<EventDetails> EventDetails { get; set; }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace StrongBartending.Pages.Lead
                 .Include(l => l.EventTypeKeyNavigation)
                 .Include(l => l.LeadStatNavigation)
                 .Include(l => l.LinkKeyNavigation).FirstOrDefaultAsync(m => m.LeadKey == id);
+
 
             if (Leads == null)
             {
@@ -55,7 +58,26 @@ namespace StrongBartending.Pages.Lead
 
             if (Leads != null)
             {
-                _context.Leads.Remove(Leads);
+                Leads.LeadStat = 7;
+                _context.Attach(Leads).State = EntityState.Modified;
+
+                EventDetails = await _context.EventDetails
+                    .Include(e => e.LeadKeyNavigation)
+                    .Include(e => e.LineStatNavigation)
+                    .Include(e => e.ServiceKeyNavigation).ToListAsync();
+
+                EventDetails = EventDetails.Where(e => e.LeadKey == id).ToList();
+
+                foreach (EventDetails items in EventDetails)
+                { 
+                    if(items.LeadKey==Leads.LeadKey)
+                    {
+                        items.LineStat = 4;
+                        _context.Attach(items).State = EntityState.Modified;
+                    }
+                
+                }
+
                 await _context.SaveChangesAsync();
             }
 

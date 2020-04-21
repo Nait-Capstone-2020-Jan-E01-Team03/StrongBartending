@@ -6,6 +6,7 @@ namespace StrongBartending
     public partial class Events
     {
         public int EventKey { get; set; }
+        public int LeadKey { get; set; }
         public int EventStat { get; set; }
         public int ContactKey { get; set; }
         public DateTime Reminder { get; set; }
@@ -21,5 +22,6 @@ namespace StrongBartending
 
         public virtual Contacts ContactKeyNavigation { get; set; }
         public virtual EventStatus EventStatNavigation { get; set; }
+        public virtual Leads LeadKeyNavigation { get; set; }
     }
 }

@@ -43,6 +43,7 @@ namespace StrongBartending.Pages.Lead
             }
             Leads.Created = DateTime.Now;
             Leads.Modified = DateTime.Now;
+            Leads.LeadStat = 1;
             _context.Leads.Add(Leads);
             await _context.SaveChangesAsync();
 
